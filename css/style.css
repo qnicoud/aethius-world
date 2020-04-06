@@ -3,6 +3,15 @@
   --box-width: 700px;
   --box-height: 200px;
 }
+
+@font-face {
+font-family: "LibreFranklin";
+src: url("https://yoursite.com/css/fonts/CustomFont.eot");
+src: url("https://yoursite.com/css/fonts/CustomFont.woff") format("woff"),
+url("https://yoursite.com/css/fonts/CustomFont.otf") format("opentype"),
+url("https://yoursite.com/css/fonts/CustomFont.svg#filename") format("svg");
+}
+
 body {
   margin:auto;
   margin: 0;
@@ -105,7 +114,6 @@ h1{
   padding: 25px;
 }
 
-
 #footer{
   background-color: #0f471a;
   padding: 10px;
@@ -118,4 +126,9 @@ h1{
 .stickyBot {
   position: sticky;
   bottom: 0;
+}
+
+#header img{
+  width: 100%;
+  height: auto;
 }
