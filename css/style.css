@@ -1,12 +1,15 @@
 /* CSS stylesheet */
-
+:root{
+  --box-width: 700px;
+  --box-height: 200px;
+}
 body {
   margin:auto;
   margin: 0;
   padding: 0;
-  background-color: black;
-  background-image: linear-gradient(to bottom, #004000, #001d00);*/
-  font-family: calibri, sans-serif;
+  background-color: white;
+  /*background-image: linear-gradient(to bottom, #004000, #001d00);*/
+  /*font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;*/
 }
 
 a {
@@ -19,10 +22,7 @@ h1{
 }
 
 #container{
-  background-color: #ffffff;
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: #222222;
 }
 
 #header{
@@ -34,6 +34,23 @@ h1{
   background-color: #ccc;
   padding: 10px;
 }
+
+.box{
+  width: var(--box-width);
+  height: var(--box-height);
+  background: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(0% 0%,
+                     calc(0.9 * var(--box-width)) 0%,
+                     100% calc(0.25 * var(--box-height)),
+                     100% 100%,
+                     calc(0.1 * var(--box-width)) 100%,
+                     0% calc(0.75 * var(--box-height)))
+}
+
 
 #nav{
   /*float: left; /* allows to organie nav & main in columns */
@@ -88,9 +105,17 @@ h1{
   padding: 25px;
 }
 
+
 #footer{
-  background-color: #ddd;
+  background-color: #0f471a;
+  padding: 10px;
+  color: #77aa7b;
   text-align: right;
   clear: both; /* means it requires no floating elements on its line to be displayed.
                   Pushes it down if there is any.*/
+}
+
+.stickyBot {
+  position: sticky;
+  bottom: 0;
 }
