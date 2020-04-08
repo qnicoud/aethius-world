@@ -1,3 +1,5 @@
+// No longer needed // DEPRECATED
+
 // When the user scrolls the page, execute myFunction
 window.onscroll = function() {getSticky()};
 

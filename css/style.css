@@ -23,28 +23,28 @@ a {
 }
 
 #header{
-  	text-align: center;
-  	background-image: url("image/website_display_short.png")
 	height: 500px;
 }
 
-#header h1{
+#header .title{
+	position: relative;
+	top: -75%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+#header h1 {
   	font-weight: bolder;
-  	color: white;
   	font-size: 70px;
-	position:absolute;
-	top:10%;
-	left:25%;
+	position: relative;
+	left: 40px;
 }
 
 #header blockquote{
-  	color: white;
-	position:absolute;
-	top:25%;
-	left:15%;
-	right:15%;
+	position: relative;
 	font-size: 20px;
-	text-align:left;
+	text-align: left;
 }
 
 #header img{
@@ -53,14 +53,11 @@ a {
 }
 
 #nav{
-  	/*float: left; /* allows to organie nav & main in columns */
-	margin-top: -6px;
-	padding: 0px;
+	top: 0; /*meant to be sticky*/
   	overflow: hidden;
   	background-color: #222222;
-  	border-bottom: solid 1px #444444;
-  	border-top: solid 1px #444444;
-	z-index: 2;
+  	border-bottom: solid 1px #333333;
+  	border-top: solid 1px #333333;
 }
 
 #nav a {
@@ -88,16 +85,9 @@ a {
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
-  	position: fixed;
-  	top: 0;
-  	width: 100%;
+	position: sticky;
+	top: 0;
 }
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  	padding-top: 60px;
-}
-
 
 #container{
   	/*background-color: #222222;*/
@@ -111,15 +101,23 @@ a {
   	height: var(--box-height);
 	padding: 20px;
   	background-image: linear-gradient(to right, rgba(71,71,71,255),
-										rgba(61,61,61,255),
-										rgba(51,51,51,255),
-										rgba(0,0,0,0));
+												rgba(61,61,61,255),
+												rgba(51,51,51,255),
+												rgba(0,0,0,0));
 
   	clip-path: polygon(0% 0%,
                      	100% 0%,
                      	100% 100%,
                      	calc(0.1 * var(--box-width)) 100%,
                      	0% calc(0.75 * var(--box-height)));
+}
+
+.box img{
+	float: left;
+}
+
+.box .text{
+	padding: 7px;
 }
 
 #main{
@@ -131,7 +129,7 @@ a {
 
 #right_side_container{
 	float: right;
-	width: 25%;
+	width: 29%;
 	height: 1500px;
 }
 
@@ -143,44 +141,46 @@ a {
 
 /*https://stackoverflow.com/questions/25914363/how-can-i-create-a-concave-bottom-border-in-css*/
 #curvedsidebar {
-    background:none;
+	top: 54px; /*meant to be sticky*/
+	background:none;
     height:50%;
-    position:relative;
     overflow:hidden;
     z-index:1;
 }
 
-/*#curvedsidebar:after {
+
+#curvedsidebar::before, #curvedsidebar::after {
     content:'';
     position:relative;
-	top:-5000px;
-    width:1000%;
-    padding-bottom:1300%;
-	left:-200px;
-    background:none;
-    border-radius:90%;
-	border: solid;
+	display: inline-block;
+	top:-15%;
+	left:-55%;
+	padding-bottom:1200px;
+	padding-right:65%;
+	-webkit-transform: rotate(5deg);
+	border-radius: 90%;
+}
+
+#curvedsidebar::before{
 	-webkit-box-shadow:
-		0px 0px 10px 50px rgba(59, 120, 63, 255),
-		0px 0px 8px 200px rgba(0, 0, 0, 0);
-	z-index:-1;
-}*/
-#curvedsidebar:after {
-    content:'';
-    position:absolute;
-    left:-985%;
-    width:1000%;
-    padding-bottom:1300%;
-    top:-300%;
-    background:none;
-    border-radius:90%;
-	border: solid;
-	-webkit-box-shadow:
-		0px 0px 10px 50px rgba(59, 120, 63, 255),
-		0px 0px 8px 200px rgba(0, 0, 0, 0);
+		0px -100px 200px 0px rgba(59, 120, 63, 255);
+	-moz-box-shadow:
+		25px -25px 50px 0px rgba(59, 120, 63, 255);
+	-ms-box-shadow:
+		25px -25px 50px 0px rgba(59, 120, 63, 255);
+	-o-box-shadow:
+		25px -25px 50px 0px rgba(59, 120, 63, 255);
 	z-index:-1;
 }
 
+#curvedsidebar::after{
+	-webkit-box-shadow: inset -1px 10px 0 0 white;
+	position:absolute;
+}
+
+#right_side_container #apropos {
+
+}
 
 .text {
   	text-align: justify;
@@ -197,7 +197,32 @@ a {
                   Pushes it down if there is any.*/
 }
 
-.stickyBot {
-  	position: sticky;
-  	bottom: 0;
+.sticky {
+  	position: relative;
+}
+
+@supports (position: sticky) {
+	.sticky {
+		-moz-position: sticky;
+		-webkit-position: sticky;
+		-ms-position: sticky;
+		-o-position: sticky;
+    	position: sticky;
+    }
+}
+
+/*Useless here but nice to keep just in case*/
+.rounded-corners-gradient-borders {
+  width: 300px;
+  height: 80px;
+  border: double 4px transparent;
+  border-radius: 80px;
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left, #f00,#3020ff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #232837;
 }
