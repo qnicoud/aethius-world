@@ -10,7 +10,7 @@ body {
   	margin:auto;
   	margin: 0;
   	padding: 0;
-  	background-image: linear-gradient(to bottom, #222222, #222222, #222222,  #0f331a, #264130);
+  	background-image: linear-gradient(to bottom, #101111, #101111, #101111	,  #0f331a, #264130);
   	/*background-image: linear-gradient(to bottom, #004000, #001d00);*/
   	font-family: "libre_franklinmedium", "Helvetica Neue", helvetica, arial, sans-serif;
 	color: #ddd;
@@ -55,8 +55,8 @@ a {
 #nav{
 	top: 0; /*meant to be sticky*/
   	overflow: hidden;
-  	background-color: #222222;
-  	border-bottom: solid 1px #333333;
+  	background-color: #202222;
+  	border-bottom: solid 4px #aaaaaa;
   	border-top: solid 1px #333333;
 }
 
@@ -83,11 +83,6 @@ a {
   	font-weight: bold;
 }
 
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-	position: sticky;
-	top: 0;
-}
 
 #container{
   	/*background-color: #222222;*/
@@ -130,7 +125,7 @@ a {
 #right_side_container{
 	float: right;
 	width: 29%;
-	height: 1500px;
+	height: 2000px;
 }
 
 #left_side_container{
@@ -153,17 +148,17 @@ a {
     content:'';
     position:relative;
 	display: inline-block;
-	top:-15%;
-	left:-55%;
+	top:-0.3%;
+	left:-35%;
 	padding-bottom:1200px;
 	padding-right:65%;
-	-webkit-transform: rotate(5deg);
-	border-radius: 90%;
+	/*-webkit-transform: rotate(5deg);*/
+	border-radius: 45%;
 }
 
 #curvedsidebar::before{
 	-webkit-box-shadow:
-		0px -100px 200px 0px rgba(59, 120, 63, 255);
+		0px 0px 0px 1000px #202222;
 	-moz-box-shadow:
 		25px -25px 50px 0px rgba(59, 120, 63, 255);
 	-ms-box-shadow:
@@ -174,7 +169,7 @@ a {
 }
 
 #curvedsidebar::after{
-	-webkit-box-shadow: inset -1px 10px 0 0 white;
+	-webkit-box-shadow: inset -3px 3px 0 0 #aaaaaa;
 	position:absolute;
 }
 
