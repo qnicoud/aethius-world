@@ -1,0 +1,29 @@
+{
+  "name": "aethius-world",
+  "version": "1.0.0",
+  "description": "Aethius web site",
+  "main": "blog.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qnicoud/aethius-world.git"
+  },
+  "keywords": [
+    "blog",
+    "informatics",
+    "electronics",
+    "video-games"
+  ],
+  "author": "Quentin Nicoud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qnicoud/aethius-world/issues"
+  },
+  "homepage": "https://github.com/qnicoud/aethius-world#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
