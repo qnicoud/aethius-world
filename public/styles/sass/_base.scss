@@ -1,0 +1,129 @@
+/* variables */
+
+:root {
+	--body-width: 1300px;
+}
+
+$circles_anim: 60px;
+$circles_border: 10px;
+
+$social-network-size: 50px;
+
+/******************************************************************************/
+/* Fonts styles */
+
+@font-face {
+    font-family: '2-Questa_Regular';
+    src: url('../fonts/questa/2-Questa_Regular-webfont.woff2') format('woff2'),
+         url('../fonts/questa/2-Questa_Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '2_questa_slab_regular_25';
+    src: url('../fonts/questaslab/2_questa_slab_regular_25-webfont.woff2') format('woff2'),
+         url('../fonts/questaslab/2_questa_slab_regular_25-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/******************************************************************************/
+/* Mixins */
+
+@mixin header_style {
+	border-width: 3px;
+	border-style: solid;
+	border-image:
+		linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0),
+		rgba(255, 255, 255, 1),
+		rgba(255, 255, 255, 0)
+		) 0 0 10 0;
+}
+
+@mixin head-foot {
+	background-color: rgba(0, 0, 0, 0.8);
+
+	width: 1900px;
+	position: relative;
+}
+
+@mixin head-foot-cont {
+	margin: 0 auto;
+	width: var(--body-width);
+	display: flex;
+}
+
+@mixin title-1-head-section {
+	font-family: "2-Questa_Regular";
+	font-size: 24px;
+}
+
+@mixin section-content { //article & apropos
+	background: rgba(30, 30, 30, 0.7);
+	background: linear-gradient(135deg, rgba(30,30,30,0.7) 0%, rgba(30,30,30,0.7) 50%, rgba(0,0,0,0.7) 90%);
+	color: rgb(220, 220, 220);
+
+	border-radius: 10px;
+	padding: 15px;
+	margin: 15px;
+}
+
+@mixin links-white-box {
+	color: white;
+	text-decoration: none;
+
+	transform: scale(1);
+	// -webkit-transition: transform 400ms;
+    // -moz-transition: transform 400ms;
+    // -o-transition: transform 400ms;
+    // -ms-transition: transform 400ms;
+	transition: transform 400ms;
+
+	&:hover {
+		transform: scale(1.25);
+		color: black;
+		background: white;
+		border-radius: 2px;
+	}
+}
+
+@mixin rotating_circles {
+	position: absolute;
+
+	top: $circles_border / 2;
+	left: $circles_border / 2;
+
+	height: $circles_anim;
+	width: $circles_anim;
+
+	border: ($circles_border / 2) solid white;
+	border-radius: $circles_anim;
+}
+
+/// Mixin to prefix several properties at once
+/// @author Hugo Giraudel
+/// @param {Map} $declarations - Declarations to prefix
+/// @param {List} $prefixes (()) - List of prefixes to print
+
+@mixin prefix($declarations, $prefixes: ()) {
+  @each $property, $value in $declarations {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+
+    // Output standard non-prefixed declaration
+    #{$property}: $value;
+  }
+}
+
+// //// Usage
+// .selector {
+//   @include prefix((
+//     column-count: 3,
+//     column-gap: 1.5em,
+//     column-rule: 2px solid hotpink
+//   ), webkit moz);
+// }
