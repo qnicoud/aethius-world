@@ -1,5 +1,5 @@
 /* CSS stylesheet */
-@import("fonts/fonts.css")
+@import "public/fonts/fonts.css";
 
 :root{
 	--box-width: 700px;
