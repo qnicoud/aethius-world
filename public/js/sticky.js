@@ -1,21 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
-	// When the user scrolls the page, execute beSticky
-	window.onscroll = function(event) {beSticky(event)};
-
+	
 	// Get the navbar
-	var navbar = document.getElementById("navbar");
+	const navbar = document.getElementById("navbar");
+	const parent = navbar.parentElement;
 
-	// Get the offset position of the navbar
-	var offsetFromTop = navbar.getBoundingClientRect().top;
+	var parentOffset = parent.getBoundingClientRect().top;
 
-	// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-	function beSticky(event) {
-		console.log([navbar, offsetFromTop]);
-	  if (window.pageYOffset >= offsetFromTop) {
-	    navbar.classList.add("sticky");
-	  } else {
-	    navbar.classList.remove("sticky");
-	  }
+	// Get the initial offset position of the navbar
+	var offsetFromTopInit = navbar.getBoundingClientRect().top;
+
+	// get the distance of the viewport from the top of the document
+	const distanceScrolledInit = window.screenY;
+
+	/* When the user scrolls the page, 
+	add the sticky class to the navbar 
+	when you reach its scroll position. 
+	Remove "sticky" when you leave the scroll position */
+	window.onscroll = function(event) {beSticky(event)};
+		
+	beSticky = function (event) {
+	
+		if (window.pageYOffset >= offsetFromTopInit - parentOffset) {
+
+	    	navbar.classList.add("sticky");
+
+	  	} else {
+
+	    	navbar.classList.remove("sticky");
+			navbar.style.top = parentOffset;
+
+	  	}
 	}
 
 })

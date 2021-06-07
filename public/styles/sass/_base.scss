@@ -12,21 +12,86 @@ $social-network-size: 50px;
 /******************************************************************************/
 /* Fonts styles */
 
+// font-family: 'DotGothic16', sans-serif;
 @font-face {
-    font-family: '2-Questa_Regular';
-    src: url('../fonts/questa/2-Questa_Regular-webfont.woff2') format('woff2'),
-         url('../fonts/questa/2-Questa_Regular-webfont.woff') format('woff');
+    font-family: 'DotGothic16';
+    src: url('../fonts/DotGothic16/DotGothic16-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
+// font-family: 'Geo', sans-serif;
 @font-face {
-    font-family: '2_questa_slab_regular_25';
-    src: url('../fonts/questaslab/2_questa_slab_regular_25-webfont.woff2') format('woff2'),
-         url('../fonts/questaslab/2_questa_slab_regular_25-webfont.woff') format('woff');
+    font-family: 'Geo';
+    src: url('../fonts/Geo/Geo-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
+
+// font-family: 'Orbitron', sans-serif;
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../fonts/Orbitron/Orbitron-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// font-family: 'Press Start 2P', cursive;
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('../fonts/Press_Start_2P/PressStart2P-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// font-family: 'Share Tech', sans-serif;
+@font-face {
+    font-family: 'Share Tech';
+    src: url('../fonts/Share_Tech/ShareTech-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// font-family: 'Share Tech Mono', monospace;
+@font-face {
+    font-family: 'Share Tech Mono';
+    src: url('../fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// font-family: 'Ubuntu', sans-serif;
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/Ubuntu-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// font-family: 'Ubuntu Mono', monospace;
+@font-face {
+    font-family: 'Ubuntu Mono';
+    src: url('../fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//OBSOLETE
+// @font-face {
+//     font-family: '2-Questa_Regular';
+//     src: url('../fonts/questa/2-Questa_Regular-webfont.woff2') format('woff2'),
+//          url('../fonts/questa/2-Questa_Regular-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: '2_questa_slab_regular_25';
+//     src: url('../fonts/questaslab/2_questa_slab_regular_25-webfont.woff2') format('woff2'),
+//          url('../fonts/questaslab/2_questa_slab_regular_25-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
 
 /******************************************************************************/
 /* Mixins */
@@ -57,13 +122,16 @@ $social-network-size: 50px;
 }
 
 @mixin title-1-head-section {
-	font-family: "2-Questa_Regular";
+	font-family: "Share Tech", "Ubuntu Mono", monospace;
 	font-size: 24px;
 }
 
 @mixin section-content { //article & apropos
-	background: rgba(30, 30, 30, 0.7);
-	background: linear-gradient(135deg, rgba(30,30,30,0.7) 0%, rgba(30,30,30,0.7) 50%, rgba(0,0,0,0.7) 90%);
+	background: rgba(10, 10, 10, 0.7);
+	background: linear-gradient(135deg, 
+							rgba(10,10,10,01) 0%, 
+							rgba(10,10,10,1) 50%, 
+							rgba(0,0,0,1) 90%);
 	color: rgb(220, 220, 220);
 
 	border-radius: 10px;
@@ -90,18 +158,18 @@ $social-network-size: 50px;
 	}
 }
 
-@mixin rotating_circles {
-	position: absolute;
+// @mixin rotating_circles {
+// 	position: absolute;
 
-	top: $circles_border / 2;
-	left: $circles_border / 2;
+// 	top: $circles_border / 2;
+// 	left: $circles_border / 2;
 
-	height: $circles_anim;
-	width: $circles_anim;
+// 	height: $circles_anim;
+// 	width: $circles_anim;
 
-	border: ($circles_border / 2) solid white;
-	border-radius: $circles_anim;
-}
+// 	border: ($circles_border / 2) solid white;
+// 	border-radius: $circles_anim;
+// }
 
 /// Mixin to prefix several properties at once
 /// @author Hugo Giraudel
@@ -127,3 +195,7 @@ $social-network-size: 50px;
 //     column-rule: 2px solid hotpink
 //   ), webkit moz);
 // }
+
+.hidden {
+	display: none;
+}

@@ -20,14 +20,19 @@ app.get('/', (req, res) => {
     res.render("home");
 });
 
-// When /contact is requested, send the 'about me' page.
+// When /about is requested, send the 'about me' page.
 app.get('/about', (req, res) => {
     res.render("about");
 });
 
-// When root is requested, send the contact page.
+// When /contact is requested, send the contact page.
 app.get('/contact', (req, res) => {
     res.render("contact");
+});
+
+// When /CV is requested, send the contact page.
+app.get('/CV', (req, res) => {
+    res.render("CV");
 });
 
 // Nodejs server set to listen on port 3000

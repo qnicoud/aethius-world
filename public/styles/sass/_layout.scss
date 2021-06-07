@@ -5,9 +5,9 @@
 html,body{overflow-x: hidden;} // trouver quel element cause apparaition scrollbar horizontale
 
 html {
-	background: linear-gradient(rgba(0, 0, 0, 1),
-								rgba(30, 30, 30, 1),
-								rgba(0, 0, 0, 1));
+	background: linear-gradient(rgba(20, 20, 20, 1),
+								rgb(34, 9, 9),
+								rgba(20, 20, 20, 1));
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -23,7 +23,8 @@ html {
 
 body{
 	margin: 0 0 205px;
-	font-family: monospace, "Trebuchet MS";
+	font-family: "Ubuntu Mono", monospace;
+	font-size: large;
 }
 
 #bloc_page {
